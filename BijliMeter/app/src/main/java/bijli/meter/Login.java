@@ -34,7 +34,8 @@ public class Login extends Activity {
 
         if(user != null){
             finish();
-           // Intent intent=new Intent(Login.this,)
+            Intent intent=new Intent(Login.this,Home.class);
+            startActivity(intent);
         }
 
         getEmailPass();
@@ -66,8 +67,8 @@ public class Login extends Activity {
                 if(task.isSuccessful()){
                     progressDialog.dismiss();
                     Toast.makeText(Login.this,"Login Successful",Toast.LENGTH_SHORT).show();
-                    //Intent intent=new Intent(MainActivity.this,thirdActivity.class);
-                    //startActivity(intent);
+                    Intent intent=new Intent(Login.this,Home.class);
+                    startActivity(intent);
                 }
                 else{
                     progressDialog.dismiss();
