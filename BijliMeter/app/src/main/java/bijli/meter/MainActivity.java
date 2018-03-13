@@ -3,6 +3,7 @@ package bijli.meter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,6 +18,8 @@ public class MainActivity extends Activity {
         LogoLauncher logoLauncher = new LogoLauncher();
 
         logoLauncher.start();
+        //ActionBar actionBar = getActionBar();
+        //actionBar.hide();
     }
 
     private class LogoLauncher extends Thread{
