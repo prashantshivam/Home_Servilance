@@ -4,13 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends Activity {
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LogoLauncher logoLauncher = new LogoLauncher();
+
         logoLauncher.start();
     }
 
@@ -23,10 +28,18 @@ public class MainActivity extends Activity {
             catch (InterruptedException e){
                 e.printStackTrace();
             }
-
-            Intent intent=new Intent(MainActivity.this,LoginSignup.class);
-            startActivity(intent);
-            MainActivity.this.finish();
+            firebaseAuth=FirebaseAuth.getInstance();
+            FirebaseUser user=firebaseAuth.getCurrentUser();
+            if(user!=null){
+                Intent intent=new Intent(MainActivity.this,Home.class);
+                startActivity(intent);
+                MainActivity.this.finish();
+            }
+            else {
+                Intent intent = new Intent(MainActivity.this, LoginSignup.class);
+                startActivity(intent);
+                MainActivity.this.finish();
+            }
         }
 
     }

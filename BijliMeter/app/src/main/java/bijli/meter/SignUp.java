@@ -29,6 +29,7 @@ public class SignUp extends Activity {
     private Button button;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    private DatabaseReference databaseUser;
     String name,email,password,phone,productId,repassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class SignUp extends Activity {
                                 progressDialog.dismiss();
                                 sendUserData();
                                 Toast.makeText(SignUp.this, "Registration Successfull", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignUp.this,MainActivity.class));
+                                startActivity(new Intent(SignUp.this,Home.class));
                             }
                             else{
                                 progressDialog.dismiss();
@@ -111,10 +112,10 @@ public class SignUp extends Activity {
 
 
     private void sendUserData(){
-        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-        DatabaseReference myRef=firebaseDatabase.getReference(firebaseAuth.getUid());
-        User userProfile=new User(name,email,phone,password);
-        //myRef.setValue(userProfile);
+        databaseUser =FirebaseDatabase.getInstance().getReference("users");
+        String id = databaseUser.push().getKey();
+        User userProfile=new User(id,name,email,phone,password);
+        databaseUser.child(id).setValue(userProfile);
     }
 
 

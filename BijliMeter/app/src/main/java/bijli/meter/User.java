@@ -9,10 +9,12 @@ public class User {
     public String userEmail;
     public String userName;
     public String userPhone;
-    public User(String userAge,String userEmail, String userName,String userPhone){
+    public String userId;
+    public User(String userId, String userAge,String userEmail, String userName,String userPhone){
         this.userAge=userAge;
         this.userEmail=userEmail;
         this.userName=userName;
         this.userPhone=userPhone;
+        this.userId=userId;
     }
 }
