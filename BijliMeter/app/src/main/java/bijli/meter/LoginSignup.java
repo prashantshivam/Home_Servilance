@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class LoginSignup extends Activity {
@@ -37,7 +38,7 @@ public class LoginSignup extends Activity {
     }
 
     private void setupUIView(){
-        Signup = (TextView)findViewById(R.id.signUp);
-        Login =  (TextView)findViewById(R.id.logIn);
+        Signup = (Button)findViewById(R.id.signUp);
+        Login =  (Button)findViewById(R.id.logIn);
     }
 }

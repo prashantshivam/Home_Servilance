@@ -3,6 +3,7 @@ package bijli.meter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 
 public class MainActivity extends Activity {
 
@@ -12,6 +13,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         LogoLauncher logoLauncher = new LogoLauncher();
         logoLauncher.start();
+        //ActionBar actionBar = getActionBar();
+        //actionBar.hide();
     }
 
     private class LogoLauncher extends Thread{
