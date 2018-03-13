@@ -17,14 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginSignup" />
-        <activity android:name=".Login"
-            android:label="Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="LoginSignup.this,Login.class" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".SignUp"></activity>
+        <activity android:name=".Login"/>
+        <activity android:name=".SignUp"/>
+        <activity android:name=".Home"></activity>
     </application>
 
 </manifest>
