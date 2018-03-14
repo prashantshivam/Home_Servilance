@@ -3,7 +3,9 @@ package bijli.meter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -36,14 +38,10 @@ public class myDevices extends Activity {
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
         createDevice = new CreateDevice();
-        arrayAdapter=new ArrayAdapter<String>(this,R.layout.device_info,arrayList);
         arrayList=new ArrayList<>();
-        databaseReference=firebaseDatabase.getReference("devices");
-        System.out.println();
-        System.out.println();
-        System.out.println(databaseReference+"hhh");
-        System.out.println();
-        System.out.println();
+        arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayList);
+        databaseReference=firebaseDatabase.getReference().child("devices");
+
         addDevice = (Button)findViewById(R.id.addDevice);
         Device = (Button)findViewById(R.id.device1);
 
@@ -51,10 +49,17 @@ public class myDevices extends Activity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
-                    createDevice=ds.getValue(CreateDevice.class);
-                    arrayList.add(createDevice.getDevice());
+
+                    String device = ds.child("device").getValue().toString();
+                    String room = ds.child("room").getValue().toString();
+
+                    Log.d("device", device);
+                    Log.d("room", room);
+
+                    arrayList.add(device + room);
                 }
                 listView.setAdapter(arrayAdapter);
+                listView.setOnItemClickListener(myListClickListener);
             }
 
             @Override
@@ -72,4 +77,14 @@ public class myDevices extends Activity {
             }
         });
     }
+
+    private AdapterView.OnItemClickListener myListClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            Intent intent = new Intent(myDevices.this, DeviceData.class);
+            startActivity(intent);
+
+        }
+    };
 }
