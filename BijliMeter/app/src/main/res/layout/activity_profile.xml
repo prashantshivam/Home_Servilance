@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context="bijli.meter.Prrofile">
+    tools:context="bijli.meter.Profile">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -161,7 +161,7 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/myDevices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/footer"
@@ -173,12 +173,12 @@
             android:text="My Devices" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/changePassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/button2"
-            android:layout_alignLeft="@+id/button2"
-            android:layout_alignStart="@+id/button2"
+            android:layout_above="@+id/myDevices"
+            android:layout_alignLeft="@+id/myDevices"
+            android:layout_alignStart="@+id/myDevices"
             android:layout_marginBottom="12dp"
             android:text="Change Password" />
     </RelativeLayout>

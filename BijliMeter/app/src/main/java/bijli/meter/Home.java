@@ -56,5 +56,13 @@ public class Home extends Activity {
                 startActivity(intent);
             }
         });
+
+        Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Home.this,Profile.class);
+                startActivity(intent);
+            }
+        });
     }
 }
