@@ -45,8 +45,14 @@
         <activity
             android:name=".AddDevice"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+<<<<<<< HEAD
         <activity android:name=".DeviceData"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+=======
+        <activity android:name=".Prrofile" />
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".EditProfile"></activity>
+>>>>>>> 90667aa852f393e4a92d12b2b776ae30eb8c3230
     </application>
 
 </manifest>

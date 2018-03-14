@@ -54,4 +54,5 @@
             android:layout_weight="1"
             android:src="@drawable/common_google_signin_btn_icon_dark_normal" />
     </LinearLayout>
+
 </RelativeLayout>
