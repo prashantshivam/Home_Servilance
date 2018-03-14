@@ -9,6 +9,9 @@ public class CreateDevice {
     private String Device;
     private String Room;
 
+    public CreateDevice(){
+
+    }
     public  CreateDevice(String ID, String Device, String Room){
         this.ID=ID;
         this.Device=Device;
