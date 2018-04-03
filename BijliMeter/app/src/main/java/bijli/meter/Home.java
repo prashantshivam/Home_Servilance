@@ -41,6 +41,14 @@ public class Home extends Activity {
             }
         });
 
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Home.this,Home.class);
+                startActivity(intent);
+            }
+        });
+
         Mydevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,10 +57,10 @@ public class Home extends Activity {
             }
         });
 
-        Home.setOnClickListener(new View.OnClickListener() {
+        Expenses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Home.this,Home.class);
+                Intent intent=new Intent(Home.this,expenses.class);
                 startActivity(intent);
             }
         });

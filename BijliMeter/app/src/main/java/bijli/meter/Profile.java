@@ -19,7 +19,7 @@ public class Profile extends Activity {
 
         EditProfileButton=(ImageButton)findViewById(R.id.editProfile);
         ChangePasswordButton=(Button)findViewById(R.id.changePassword);
-        MyDevicesButton=(Button)findViewById(R.id.myDevices);
+        //MyDevicesButton=(Button)findViewById(R.id.myDevices);
 
         EditProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,12 +37,11 @@ public class Profile extends Activity {
             }
         });
 
-        MyDevicesButton.setOnClickListener(new View.OnClickListener() {
+        /*MyDevicesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Profile.this,myDevices.class);
+                Intent intent=new Intent(Profile.this,ChangePassword.class);
                 startActivity(intent);
-            }
-        });
+        });*/
     }
 }

@@ -50,13 +50,13 @@ public class myDevices extends Activity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
 
-                    String device = ds.child("device").getValue().toString();
-                    String room = ds.child("room").getValue().toString();
+                    String device = ds.child("device").getValue().toString().toUpperCase();
+                    String room = ds.child("room").getValue().toString().toUpperCase();
 
                     Log.d("device", device);
                     Log.d("room", room);
 
-                    arrayList.add(device + room);
+                    arrayList.add(room + "   "+ device);
                 }
                 listView.setAdapter(arrayAdapter);
                 listView.setOnItemClickListener(myListClickListener);
@@ -82,7 +82,7 @@ public class myDevices extends Activity {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-            Intent intent = new Intent(myDevices.this, DeviceData.class);
+            Intent intent = new Intent(myDevices.this, DeviceAppliances.class);
             startActivity(intent);
 
         }

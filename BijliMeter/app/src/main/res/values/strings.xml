@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Bijli Meter</string>
+    <string name="fan">Fan</string>
 </resources>
