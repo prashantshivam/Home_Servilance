@@ -7,9 +7,35 @@
     android:background="@android:color/white"
     tools:context="bijli.meter.DeviceAppliances">
 
-    <CheckBox
-        android:id="@+id/switch1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Fan" />
+    <TextView
+        android:id="@+id/room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bed Room" />
+
+    <ImageButton
+        android:id="@+id/editDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/room"
+        android:layout_toRightOf="@+id/room"
+        android:src="@android:drawable/ic_menu_edit" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/editDevice"
+        android:columnCount="3">
+
+        <!--TODO: Dynamic content according to number of switches in one device-->
+        <CheckBox
+            android:id="@+id/switch1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Fan" />
+    </GridLayout>
+
 </RelativeLayout>

@@ -60,6 +60,7 @@
         <activity
             android:name=".expenses"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".EditDevice"></activity>
     </application>
 
 </manifest>
